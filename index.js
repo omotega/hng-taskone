@@ -12,6 +12,18 @@ app.get("/", (req, res) => {
 app.get("/profile", (req, res) => {
   const { slack_name, track } = req.query;
   const dateValue = new Date();
+
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const dayName = daysOfWeek[dateValue.getDay()];
   const utcTime = new Date(
     dateValue.getTime() + dateValue.getTimezoneOffset() * 60000
   );
@@ -21,7 +33,7 @@ app.get("/profile", (req, res) => {
 
   const data = {
     slack_name: slack_name,
-    current_day: dateValue.getDay(),
+    current_day: dayName,
     utc_time: utcOffset2,
     track: track,
     github_file_url:

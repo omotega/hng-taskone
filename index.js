@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const utcTime = require("./date");
+const { getCurrentUTCTime } = require("./date");
 dotenv.config();
 
 const PORT = process.env.PORT;
@@ -25,7 +25,7 @@ app.get("/api", (req, res) => {
   ];
 
   const dayName = daysOfWeek[dateValue.getDay()];
-  const utcdate = utcTime;
+  const utcdate = getCurrentUTCTime();
 
   const data = {
     slack_name: slack_name,

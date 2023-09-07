@@ -6,6 +6,10 @@ const PORT = process.env.PORT;
 const app = express();
 
 app.get("/", (req, res) => {
+  res.send("welcome to my hng task one");
+});
+
+app.get("/profile", (req, res) => {
   const { slack_name, track } = req.query;
   const dateValue = new Date();
   const utcTime = new Date(

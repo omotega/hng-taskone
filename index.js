@@ -41,7 +41,6 @@ app.get("/api", (req, res) => {
     github_repo: "https://github.com/omotega/hng-taskone",
     statuscode: 200,
   };
-  console.log(data);
   res.status(200).json(data);
 });
 

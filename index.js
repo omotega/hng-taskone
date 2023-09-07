@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
   res.send("welcome to my hng task one");
 });
 
-app.get("/profile", (req, res) => {
+app.get("/api", (req, res) => {
   const { slack_name, track } = req.query;
   const dateValue = new Date();
 

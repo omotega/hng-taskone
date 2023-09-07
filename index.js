@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const utcTime = require("./date");
 dotenv.config();
 
 const PORT = process.env.PORT;
@@ -24,19 +25,12 @@ app.get("/api", (req, res) => {
   ];
 
   const dayName = daysOfWeek[dateValue.getDay()];
-  const currentTime = dateValue.getTime();
-
-  const minTime = currentTime - 3600000;
-  const maxTime = currentTime + 3600000;
-
-  const randomTime = Math.floor(Math.random() * (maxTime - minTime)) + minTime;
-  const formattedTime = new Date(randomTime).toISOString();
-
+const utcdate = utcTime
 
   const data = {
     slack_name: slack_name,
     current_day: dayName,
-    utc_time: formattedTime,
+    utc_time: utcdate,
     track: track,
     github_file_url:
       "https://github.com/omotega/hng-taskone/blob/main/index.js",

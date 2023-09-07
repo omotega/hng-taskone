@@ -13,7 +13,7 @@ app.get("/profile", (req, res) => {
   const { slack_name, track } = req.query;
   const dateValue = new Date();
   const utcTime = new Date(
-    currentDate.getTime() + currentDate.getTimezoneOffset() * 60000
+    dateValue.getTime() + currentDate.getTimezoneOffset() * 60000
   );
   const utcOffset2 = new Date(
     utcTime.getTime() + 2 * 60 * 60 * 1000

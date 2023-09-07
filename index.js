@@ -24,14 +24,19 @@ app.get("/api", (req, res) => {
   ];
 
   const dayName = daysOfWeek[dateValue.getDay()];
-  const isoTimestamp = dateValue.toISOString();
+  const currentTime = dateValue.getTime();
 
-console.log(isoTimestamp);
+  const minTime = currentTime - 3600000;
+  const maxTime = currentTime + 3600000;
+
+  const randomTime = Math.floor(Math.random() * (maxTime - minTime)) + minTime;
+  const formattedTime = new Date(randomTime).toISOString();
+
 
   const data = {
     slack_name: slack_name,
     current_day: dayName,
-    utc_time: isoTimestamp,
+    utc_time: formattedTime,
     track: track,
     github_file_url:
       "https://github.com/omotega/hng-taskone/blob/main/index.js",

@@ -24,22 +24,19 @@ app.get("/api", (req, res) => {
   ];
 
   const dayName = daysOfWeek[dateValue.getDay()];
-  const utcTime = new Date(
-    dateValue.getTime() + dateValue.getTimezoneOffset() * 60000
-  );
-  const utcOffset2 = new Date(
-    utcTime.getTime() + 2 * 60 * 60 * 1000
-  ).toISOString();
+  const isoTimestamp = dateValue.toISOString();
+
+console.log(isoTimestamp);
 
   const data = {
     slack_name: slack_name,
     current_day: dayName,
-    utc_time: utcOffset2,
+    utc_time: isoTimestamp,
     track: track,
     github_file_url:
       "https://github.com/omotega/hng-taskone/blob/main/index.js",
-    github_repo: "https://github.com/omotega/hng-taskone",
-    statuscode: 200,
+    github_repo_url: "https://github.com/omotega/hng-taskone",
+    status_code: 200,
   };
   res.status(200).json(data);
 });

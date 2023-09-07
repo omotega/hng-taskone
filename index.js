@@ -25,7 +25,7 @@ app.get("/api", (req, res) => {
   ];
 
   const dayName = daysOfWeek[dateValue.getDay()];
-const utcdate = utcTime
+  const utcdate = utcTime;
 
   const data = {
     slack_name: slack_name,

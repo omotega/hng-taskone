@@ -1,8 +1,5 @@
 function getCurrentUTCTimeWithRandomOffset() {
   const now = new Date();
-  const randomOffsetInSeconds = Math.floor(Math.random() * 240) - 120; 
-  now.setUTCSeconds(now.getUTCSeconds() + randomOffsetInSeconds);
-
   const year = now.getUTCFullYear();
   const month = String(now.getUTCMonth() + 1).padStart(2, "0");
   const day = String(now.getUTCDate()).padStart(2, "0");
@@ -15,5 +12,4 @@ function getCurrentUTCTimeWithRandomOffset() {
 
 const utcTime = getCurrentUTCTimeWithRandomOffset();
 
-module.exports = utcTime
-
+module.exports = utcTime;

@@ -46,7 +46,6 @@ class PersonController {
   static async deletedetails(req, res) {
     try {
       const { id } = req.params;
-      console.log(id);
       const response = await PersonService.deletePersonDetails(id);
       res
         .status(httpStatus.OK)

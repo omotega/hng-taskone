@@ -20,7 +20,7 @@
    ```
 3. Make a copy of the .env.example file to .env
 
-4. Execute yarn dev and You will be able to access the API from localhost:7400
+4. Execute yarn start and You will be able to access the API from localhost:7400
 
 ## Hosted Api link
 
@@ -28,7 +28,7 @@ Link: https://easy-red-armadillo-toga.cyclic.app/
 
 ## APIs
 
-### create Person
+### Create Person
 
 - Route: /api
 - Method: POST
@@ -62,9 +62,9 @@ Success
 
 ### Get user Details
 
-- Route: /api/account/\_id
+- Route: /api/_id
 - Method: GET
-- query: \_id
+- Params: _id
 
 ```
 URL: /api/64ff3863cadb63d3d0998657
@@ -89,11 +89,11 @@ Success
 
 ---
 
-### update User details
+### Update User details
 
-- Route: /api/account/\_id
-- Method: PATCH
-- query: \_id
+- Route: /api/_id
+- Method: PUT
+- Params: _id
 - Body: name
 
 ```
@@ -126,11 +126,12 @@ Success
     }
 }
 ```
+
 ### Delete User details
 
-- Route: /api
+- Route: /api/_id
 - Method: DELETE
-- Query: _id
+- Params: _id
 
 ```
 
@@ -144,10 +145,12 @@ Success
 {
     "message": "User deleted successfully",
     "data": {
-        "_id": "64ff3863cadb63d3d0998657",
-        "name": "fada fada",
-        "__v": 0
-    }
+            "id": "64ff3863cadb63d3d0998657",
+            "name": "fada fada",
+    "v": 0
 }
+}
+
+```
 
 ```
